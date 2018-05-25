@@ -1,3 +1,11 @@
-FROM node:latest
+FROM node:10-alpine
+
+WORKDIR /usr/src/node-app
+
+COPY . .
+
+RUN npm install
 
 EXPOSE 3000
+
+CMD ["npm", "start"]
